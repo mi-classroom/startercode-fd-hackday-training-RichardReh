@@ -1,0 +1,30 @@
+html,
+body {
+  padding: $s;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: $font-sans-serif;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+main {
+  margin-bottom: $xl;
+}
+
+a {
+  color: var(--interaction-color);
+  text-decoration: none;
+}
+
+dt {
+  font-weight: $fw-bold;
+}

@@ -1,0 +1,284 @@
+/* Image with Caption
+############################################################################ */
+
+.image-with-caption {
+  >img {
+    width: 100%;
+  }
+
+  >figcaption {
+    /* TBD */
+  }
+}
+
+/* Artefact Navigation
+############################################################################ */
+
+.nav {
+  &-wrap {
+    display: flex;
+    flex-direction: column;
+    padding-top: $m;
+    padding-bottom: $m;
+    border-top: solid $border-width-s var(--bg-color-form);
+    border-bottom: solid $border-width-s var(--bg-color-form);
+    margin-top: $xl;
+    margin-bottom: $xl;
+  }
+
+  &-item {
+    a {
+      display: flex;
+      max-width: $min-card-width;
+      align-items: center;
+    }
+
+    img {
+      display: block;
+      width: 50px;
+      aspect-ratio: 1/1;
+      object-fit: cover;
+    }
+
+    &.previous {
+      flex-grow: 1;
+
+      a {
+        img {
+          margin-right: $xs;
+        }
+      }
+    }
+
+    &.next {
+      align-self: flex-end;
+
+      a {
+        flex-direction: row-reverse;
+
+        img {
+          margin-left: $xs;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: $vp-medium) {
+  .nav-wrap {
+    flex-direction: row;
+  }
+}
+
+/* Additional Info
+############################################################################ */
+
+.additional-info {
+  padding-bottom: $l;
+  color: var(--text-color);
+
+  dd + dt {
+    margin-top: $xs;
+  }
+}
+
+/* Artefact Image
+############################################################################ */
+
+.artefact-image {
+  .image-with-caption {
+    margin-bottom: $l;
+  }
+}
+
+/* Artefact Description
+############################################################################ */
+
+.artefact-description {
+  padding: 0;
+  margin: 0;
+
+  dl.rootdata {
+    margin-bottom: $xxl;
+
+    dt {
+      position: relative;
+      display: inline;
+      min-width: $s;
+      padding-top: $s;
+      color: var(--text-color);
+
+      &::after {
+        content: ": ";
+      }
+
+      button.btn.is-right {
+        top: $s;
+      }
+    }
+
+    dd {
+      display: inline;
+      padding-bottom: $s;
+
+      &::after {
+        display: block;
+        margin-bottom: calc($xs / 2);
+        content: "";
+      }
+    }
+
+    dt[data-target] {
+      display: block;
+      border-top: solid $border-width-s var(--bg-color-form);
+      margin-top: $s;
+
+      .btn {
+        margin-top: calc($xs / -2);
+        background-color: var(--interaction-color);
+      }
+
+      &.is-open {
+        .btn {
+          transform: rotate(180deg);
+        }
+      }
+    }
+
+    dt[data-target] + dd {
+      display: block;
+      overflow: hidden;
+      max-height: 1000px;
+      padding-right: $xxl;
+      padding-bottom: 0;
+      transition: all $tr-fast;
+    }
+
+    dt[data-target].is-open + dd {
+      height: auto;
+      margin-top: $s;
+    }
+  }
+}
+
+/* Header
+############################################################################ */
+.header {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: $xxl;
+
+  & > h1 {
+    flex-grow: 1;
+  }
+}
+
+/* Rounded Card
+############################################################################ */
+
+.rounded-card {
+  position: relative;
+  overflow: hidden;
+  background-color: var(--bg-color-card);
+  border-radius: $border-radius;
+
+  >img {
+    width: 100%;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+  }
+
+  >figcaption {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: $m;
+    padding-top: $xl;
+    padding-bottom: $xs;
+
+    > p {
+      margin-bottom: $xs;
+    }
+
+    >.additional-info {
+      display: none;
+    }
+  }
+
+  [data-view="list-view"] & {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+  }
+}
+
+/* Form Field
+############################################################################ */
+
+.form-field {
+  margin-bottom: $s;
+
+  & > input[type="text"],
+  & > input[type="date"],
+  & > textarea {
+    width: 100%;
+    padding: calc($xs / 2);
+    border: none;
+    margin-bottom: calc($xs / 2);
+    background-color: var(--bg-color-form);
+    color: var(--text-color);
+  }
+
+  & > textarea {
+    min-height: 6rem;
+  }
+
+  & > label {
+    font-size: $xs;
+  }
+
+  &__button {
+    padding: $xs;
+    border: none;
+    background-color: var(--interaction-color);
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+/* Card
+############################################################################ */
+
+.card {
+  [data-view-mode="list-view"] & {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+
+    img {
+      height: 100%;
+      padding: $m;
+    }
+
+    figcaption {
+      width: 100%;
+      border: none;
+
+      p {
+        font-size: $m;
+      }
+
+      .additional-info {
+        display: block;
+      }
+    }
+  }
+}
+
+/* Subtitle
+############################################################################ */
+
+.subtitle {
+
+}

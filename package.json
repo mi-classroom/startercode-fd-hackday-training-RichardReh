@@ -1,0 +1,30 @@
+{
+  "name": "fd-2022-cnoss",
+  "version": "2.0.0",
+  "description": "Startercode für den FD Hackday",
+  "scripts": {
+    "dev:css": "sass src/assets/styles/scss/main.scss:src/compiled-assets/main.css",
+    "watch:sass": "sass --watch src/assets/styles/scss src/assets/styles/scss/main.scss:src/compiled-assets/main.css",
+    "watch": "npm-run-all --parallel dev:css watch:*",
+    "build:css": "sass src/assets/styles/scss/main.scss:src/compiled-assets/main.css",
+    "build:site": "ELEVENTY_ENV=production npx eleventy",
+    "del:docs": "rimraf ./docs",
+    "del:assets": "rimraf ./src/compiled-assets",
+    "serve:11ty": "ELEVENTY_ENV=development npx eleventy --serve",
+    "serve:prod": "serve ./docs/",
+    "dev": "npm-run-all --parallel watch serve:11ty",
+    "build": "npm-run-all del:docs del:assets build:css build:site",
+    "live": "npm run build && npm run serve:prod"
+  },
+  "author": "Christian Noss",
+  "license": "ISC",
+  "devDependencies": {
+    "@11ty/eleventy": "^1.0.1",
+    "concat-glob-cli": "^0.1.0",
+    "html-minifier": "^4.0.0",
+    "md5-file": "^5.0.0",
+    "npm-run-all": "^4.1.5",
+    "rimraf": "^3.0.2",
+    "sass": "^1.53.0"
+  }
+}
