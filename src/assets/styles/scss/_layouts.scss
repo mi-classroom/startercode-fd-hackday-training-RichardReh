@@ -24,13 +24,49 @@
 .grid-container-zweispalter {
   display: grid;
   gap: $m;
-  grid-template-columns: 1fr;
+  grid-template-columns: 1fr 1fr;
 }
 
-@media only screen and (min-width: $vp-medium) {
-  //.grid-container-zweispalter {
 
-  //}
+//------------------------------------------------------------
+
+@media only screen and (min-width: $vp-medium) {
+  .grid-container {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .grid-container-zweispalter {
+    display: grid;
+    gap: $m;
+    grid-template-columns: 1fr;
+  }
+}
+
+@media only screen and (min-width: $vp-large) {
+  .grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .grid-container-zweispalter {
+    display: grid;
+    gap: $m;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media only screen and (min-width: $vp-xlarge) {
+  .grid-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+
+  .grid-container-zweispalter {
+    display: grid;
+    gap: $m;
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
 /* Page

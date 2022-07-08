@@ -9,12 +9,16 @@ const generateItems = (itemData) => {
     return `
       <li>
         <a href="masterpieces/${item.inventory_number}/">
-          <figure class="rounded-card ut-bo-shadow">
-            <img
+          <figure class="rounded-card">
+          
+            <img 
               src="${item.img_src}"
               title="${this.maskEntities(item.title)}">
-            <figcaption class="ut-bg-gradient">
+              <hr>
+            <figcaption>
+            <div class="ueberschrift">
               <p>${item.title}</p>
+            </div> 
               <dl class="additional-info">
                 <dt>Zuschreibung:</dt>
                 <dd>${item.involved_persons[0].name}</dd>
