@@ -466,6 +466,8 @@ button.btn.is-active {
 /* Rounded Card
 ############################################################################ */
 .rounded-card {
+  display: flex;
+  flex-direction: column;
   position: relative;
   overflow: hidden;
   background-color: var(--bg-color-card);

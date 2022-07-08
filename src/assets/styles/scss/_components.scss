@@ -177,6 +177,8 @@
 ############################################################################ */
 
 .rounded-card {
+  display: flex;
+  flex-direction: column;
   position: relative;
   overflow: hidden;
   background-color: var(--bg-color-card);
@@ -211,6 +213,8 @@
     grid-template-columns: 300px 1fr;
   }
 }
+
+.first-section{}
 
 /* Form Field
 ############################################################################ */

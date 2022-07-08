@@ -27,8 +27,9 @@ const generateItems = (itemData) => {
               </dl>
             </figcaption>
           </figure>
-        </li>
-      </a>
+        </a>
+      </li>
+      
     `;
   });
 
