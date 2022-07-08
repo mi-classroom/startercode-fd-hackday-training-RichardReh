@@ -25,39 +25,6 @@ class FormValidator {
   };
 }
 
-class ViewSwitcher {
-  constructor() {
-    this.switcherComponent = document.querySelector('#viewSwitcher');
-    this.overviewContainer = document.querySelector('#overview');
-  }
-
-  init(){
-
-    /* Gibt es überhaupt einen Overview Container?
-       Denn auf den Detailseiten gibt es ja keinen :) */
-    if (this.overviewContainer === null) {
-      document.getElementById('viewSwitcher').remove();
-      return;
-    }
-
-    /* Default aktivieren */
-    this.switcherComponent.querySelector('[data-view=card-view]').classList.add('is-active');
-
-    /* Hier bitte den restlichen Code für den ViewSwitcher einfügen.
-       Für den Switcher Button gibt es schon die CSS-Klassen
-       card-view: für den Card View (default)
-       list-view: für den List View
-
-       …
-       …
-       …
-
-    */
-  };
-
-  changeView(ele){
-  };
-}
 class NavToNeighbours {
 
   createNavigation(prevItem, nextItem) {
@@ -74,8 +41,6 @@ class NavToNeighbours {
     if (typeof nextItem === 'undefined') return;
     this.createNavigation(prevItem, nextItem);
   };
-
-
 }
 
 class Accordian { 
@@ -91,21 +56,14 @@ class Accordian {
 }
 
 
-
-
 /* Main
 ============================================================================ */
 
-
-document.addEventListener("DOMContentLoaded", function (event) {
+document.addEventListener("DOMContentLoaded", () => {
 
   /* Form Validator */
   const validator = new FormValidator();
   validator.scan();
-
-  /* View Switcher */
-  const switcher = new ViewSwitcher();
-  switcher.init();
 
   /* Accordion */
   const accordian = new Accordian();
