@@ -1,0 +1,77 @@
+/* Grid Container
+############################################################################ */
+
+.grid-container {
+  display: grid;
+  gap: $m;
+  grid-template-columns: 1fr;
+  transition: all 0.5s;
+
+  & > li > a {
+    display: flex;
+    height: 100%;
+  }
+
+  &[data-view-mode="list-view"] {
+    grid-template-columns: 1fr;
+
+    li > a {
+      display: block;
+    }
+  }
+}
+
+.grid-container-zweispalter {
+  display: grid;
+  gap: $m;
+  grid-template-columns: 1fr 1fr;
+}
+
+//------------------------------------------------------------
+
+@media only screen and (min-width: $vp-medium) {
+  .grid-container {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .grid-container-zweispalter {
+    display: grid;
+    gap: $m;
+    grid-template-columns: 1fr;
+  }
+}
+
+@media only screen and (min-width: $vp-large) {
+  .grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .grid-container-zweispalter {
+    display: grid;
+    gap: $m;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media only screen and (min-width: $vp-xlarge) {
+  .grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+
+  .grid-container-zweispalter {
+    display: grid;
+    gap: $m;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* Page
+############################################################################ */
+
+.page {
+  max-width: $vp-xlarge;
+  margin: 0 auto;
+}

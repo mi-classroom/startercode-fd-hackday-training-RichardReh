@@ -1,0 +1,52 @@
+h1,
+h2,
+h3,
+p,
+code,
+pre {
+  margin-bottom: $m;
+}
+
+h1,
+h2,
+h3 {
+  font-weight: $fw-light;
+}
+
+p,
+table,
+figcaption,
+dt,
+dl,
+dd {
+  font-size: $s;
+  line-height: $lh-normal;
+}
+
+h1 {
+  font-size: $xl;
+  transition: 0.5s;
+}
+
+h2 {
+  font-size: $l;
+}
+
+h3 {
+  font-size: $m;
+}
+
+/* Herotext
+############################################################################ */
+
+.herotext {
+  padding-bottom: $m;
+  font-size: $l;
+}
+
+/* Longtext
+############################################################################ */
+
+.longtext * {
+  font-size: $m;
+}

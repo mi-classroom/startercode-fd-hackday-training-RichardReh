@@ -1,0 +1,629 @@
+@charset "UTF-8";
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  padding: 0;
+  border: 0;
+  margin: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote::before,
+blockquote::after,
+q::before,
+q::after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* Viewports
+----------------------------------------------------------------------------- */
+/* Größen und Abstände
+----------------------------------------------------------------------------- */
+/* Entlang der Renard10 Reihe
+  100, 125, 160, 200, 250, 315 */
+/* Schriftarten
+----------------------------------------------------------------------------- */
+@font-face {
+  font-family: Roboto-light;
+  font-style: normal;
+  font-weight: 100;
+  src: local("Roboto-light"), url("/assets/fonts/Roboto/Roboto-Light.ttf");
+}
+@font-face {
+  font-family: Roboto-regular;
+  font-style: normal;
+  font-weight: 400;
+  src: local("Roboto-regular"), url("/assets/fonts/Roboto/Roboto-Regular.ttf");
+}
+@font-face {
+  font-family: Roboto-bold;
+  font-style: normal;
+  font-weight: 700;
+  src: local("Roboto-bold"), url("/assets/fonts/Roboto/Roboto-Bold.ttf");
+}
+/* Line Height
+----------------------------------------------------------------------------- */
+/* Font Weight
+----------------------------------------------------------------------------- */
+/* Misc
+----------------------------------------------------------------------------- */
+/* Mappings
+----------------------------------------------------------------------------- */
+:root {
+  --bg-color: #333;
+  --text-color: #fff;
+  --text-color-minor: #b4b4b4;
+  --interaction-color: #fc0;
+  --bg-color-card: #000;
+  --bg-color-form: #666;
+}
+
+html,
+body {
+  padding: 1rem;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: "Roboto-light";
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+main {
+  margin-bottom: 2rem;
+}
+
+a {
+  color: var(--interaction-color);
+  text-decoration: none;
+}
+
+dt {
+  font-weight: 700;
+}
+
+h1,
+h2,
+h3,
+p,
+code,
+pre {
+  margin-bottom: 1.28rem;
+}
+
+h1,
+h2,
+h3 {
+  font-weight: 100;
+}
+
+p,
+table,
+figcaption,
+dt,
+dl,
+dd {
+  font-size: 1rem;
+  line-height: 130%;
+}
+
+h1 {
+  font-size: 2rem;
+  transition: 0.5s;
+}
+
+h2 {
+  font-size: 1.6rem;
+}
+
+h3 {
+  font-size: 1.28rem;
+}
+
+/* Herotext
+############################################################################ */
+.herotext {
+  padding-bottom: 1.28rem;
+  font-size: 1.6rem;
+}
+
+/* Longtext
+############################################################################ */
+.longtext * {
+  font-size: 1.28rem;
+}
+
+button.btn {
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  color: #fff;
+  opacity: 0.5;
+  transition: all 0.3s;
+}
+button.btn > * {
+  pointer-events: none;
+}
+button.btn:hover {
+  cursor: pointer;
+  opacity: 1;
+}
+button.btn:hover path[fill="#fff"] {
+  fill: var(--interaction-color);
+}
+button.btn.is-active {
+  opacity: 1;
+}
+
+.icon-arrow-down {
+  width: 26px;
+  height: 26px;
+  background-image: url("../assets/images/sharp-keyboard_arrow_down-24px.svg");
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.is-right {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+/* Grid Container
+############################################################################ */
+.grid-container {
+  display: grid;
+  gap: 1.28rem;
+  grid-template-columns: 1fr;
+  transition: all 0.5s;
+}
+.grid-container > li > a {
+  display: flex;
+  height: 100%;
+}
+.grid-container[data-view-mode=list-view] {
+  grid-template-columns: 1fr;
+}
+.grid-container[data-view-mode=list-view] li > a {
+  display: block;
+}
+
+.grid-container-zweispalter {
+  display: grid;
+  gap: 1.28rem;
+  grid-template-columns: 1fr 1fr;
+}
+
+@media only screen and (min-width: 720px) {
+  .grid-container {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  .grid-container-zweispalter {
+    display: grid;
+    gap: 1.28rem;
+    grid-template-columns: 1fr;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  .grid-container-zweispalter {
+    display: grid;
+    gap: 1.28rem;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media only screen and (min-width: 1400px) {
+  .grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+  .grid-container-zweispalter {
+    display: grid;
+    gap: 1.28rem;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+/* Page
+############################################################################ */
+.page {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* Image with Caption
+############################################################################ */
+.image-with-caption > img {
+  width: 100%;
+}
+.image-with-caption > figcaption {
+  /* TBD */
+}
+
+/* Artefact Navigation
+############################################################################ */
+.nav-wrap {
+  display: flex;
+  flex-direction: column;
+  padding-top: 1.28rem;
+  padding-bottom: 1.28rem;
+  border-top: solid 1px var(--bg-color-form);
+  border-bottom: solid 1px var(--bg-color-form);
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+.nav-item a {
+  display: flex;
+  max-width: 20rem;
+  align-items: center;
+}
+.nav-item img {
+  display: block;
+  width: 50px;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+}
+.nav-item.previous {
+  flex-grow: 1;
+}
+.nav-item.previous a img {
+  margin-right: 0.8rem;
+}
+.nav-item.next {
+  align-self: flex-end;
+}
+.nav-item.next a {
+  flex-direction: row-reverse;
+}
+.nav-item.next a img {
+  margin-left: 0.8rem;
+}
+
+@media only screen and (min-width: 720px) {
+  .nav-wrap {
+    flex-direction: row;
+  }
+}
+/* Additional Info
+############################################################################ */
+.additional-info {
+  padding-bottom: 1.6rem;
+  color: var(--text-color);
+}
+.additional-info dd + dt {
+  margin-top: 0.8rem;
+}
+
+/* Artefact Image
+############################################################################ */
+.artefact-image .image-with-caption {
+  margin-bottom: 1.6rem;
+}
+
+/* Artefact Description
+############################################################################ */
+.artefact-description {
+  padding: 0;
+  margin: 0;
+}
+.artefact-description dl.rootdata {
+  margin-bottom: 2.52rem;
+}
+.artefact-description dl.rootdata dt {
+  position: relative;
+  display: inline;
+  min-width: 1rem;
+  padding-top: 1rem;
+  color: var(--text-color);
+}
+.artefact-description dl.rootdata dt::after {
+  content: ": ";
+}
+.artefact-description dl.rootdata dt button.btn.is-right {
+  top: 1rem;
+}
+.artefact-description dl.rootdata dd {
+  display: inline;
+  padding-bottom: 1rem;
+}
+.artefact-description dl.rootdata dd::after {
+  display: block;
+  margin-bottom: 0.4rem;
+  content: "";
+}
+.artefact-description dl.rootdata dt[data-target] {
+  display: block;
+  border-top: solid 1px var(--bg-color-form);
+  margin-top: 1rem;
+}
+.artefact-description dl.rootdata dt[data-target] .btn {
+  margin-top: -0.4rem;
+  background-color: var(--interaction-color);
+}
+.artefact-description dl.rootdata dt[data-target].is-open .btn {
+  transform: rotate(180deg);
+}
+.artefact-description dl.rootdata dt[data-target] + dd {
+  display: block;
+  overflow: hidden;
+  max-height: 1000px;
+  padding-right: 2.52rem;
+  padding-bottom: 0;
+  transition: all 0.3s;
+}
+.artefact-description dl.rootdata dt[data-target].is-open + dd {
+  height: auto;
+  margin-top: 1rem;
+}
+
+/* Header
+############################################################################ */
+.header {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 2.52rem;
+}
+.header > h1 {
+  flex-grow: 1;
+}
+
+/* Rounded Card
+############################################################################ */
+.rounded-card {
+  position: relative;
+  display: flex;
+  overflow: hidden;
+  flex-direction: column;
+  background-color: var(--bg-color-card);
+  border-radius: none;
+}
+.rounded-card > img {
+  width: 100%;
+  aspect-ratio: 1/1;
+  object-fit: contain;
+}
+.rounded-card > figcaption {
+  position: relative;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1.28rem;
+  padding-top: 2rem;
+  padding-bottom: 0.8rem;
+}
+.rounded-card > figcaption > p {
+  margin-bottom: 0.8rem;
+}
+.rounded-card > figcaption > .additional-info {
+  display: none;
+}
+[data-view=list-view] .rounded-card {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+}
+
+hr {
+  width: 100%;
+  height: 1px;
+  margin-top: 0;
+  color: grey;
+}
+
+/* Form Field
+############################################################################ */
+.form-field {
+  margin-bottom: 1rem;
+}
+.form-field > input[type=text], .form-field > input[type=date], .form-field > textarea {
+  position: relative;
+  width: 100%;
+  padding: 0.4rem;
+  border: none;
+  margin-top: 1rem;
+  margin-bottom: 0.4rem;
+  background-color: var(--bg-color-form);
+  color: var(--text-color);
+}
+.form-field > textarea {
+  min-height: 6rem;
+}
+.form-field > input[type=date] {
+  width: 6rem;
+}
+.form-field > label {
+  position: relative;
+  color: rgb(181, 181, 181);
+  font-size: 0.8rem;
+}
+.form-field__button {
+  position: relative;
+  padding: 0.8rem;
+  border: none;
+  margin-top: 2rem;
+  background-color: var(--interaction-color);
+}
+.form-field__button:hover {
+  cursor: pointer;
+}
+
+/* Card
+############################################################################ */
+[data-view-mode=list-view] .card {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+}
+[data-view-mode=list-view] .card img {
+  height: 100%;
+  padding: 1.28rem;
+  object-fit: contain;
+}
+[data-view-mode=list-view] .card figcaption {
+  width: 100%;
+  border: none;
+}
+[data-view-mode=list-view] .card figcaption p {
+  font-size: 1.28rem;
+}
+[data-view-mode=list-view] .card figcaption .additional-info {
+  display: block;
+}
+
+/* Subtitle
+############################################################################ */
+.ut-bg-gradient > p {
+  position: relative;
+  z-index: 200;
+}
+.ut-bg-gradient::before {
+  position: absolute;
+  z-index: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-image: linear-gradient(to top, rgb(0, 0, 0), rgba(0, 0, 0, 0));
+  content: "";
+}
+
+.ut-box-shadow {
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.5);
+}
+
+.ut-more-vspace {
+  margin-bottom: 1.6rem;
+}
+
+.ut-has-error {
+  border: solid 2px #c00 !important;
+}
+
+/*# sourceMappingURL=main.css.map */
